@@ -71,10 +71,9 @@ public class Animal {
             this.peso = peso;
         }
 
-        public boolean isValid() {
-            return StringUtils.isAllEmpty(nome, raca, porte, pelagem) &&
-                    peso != 0 && id != 0;
-
+    public boolean isValid() {
+        return !StringUtils.isAnyEmpty(nome, raca, porte, pelagem) &&
+                id != 0 && peso != 0;
     }
 
 
