@@ -33,6 +33,36 @@ public class AnimalTest {
         Assertions.assertFalse(animalCadastrado.contains(animal2));
     }
 
+    //consulta de animal por ID
+    @Test
+    public void consultarAnimal(){
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+
+        Animal animal3 = new Animal(3, "Marcelina", "Pinscher", "Pequeno", "Curta", 6.00);
+        cadastroAnimal.cadastrarAnimal(animal3);
+
+        Animal animalConsultado = cadastroAnimal.consultarAnimal(3);
+
+        //verificando se foi o mesmo cadastrado
+        Assertions.assertEquals(animal3, animalConsultado);
+    }
+
+    //consulta de animal por ID invalido
+    @Test
+    public void consultarAnimalInvalido(){
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+
+        Animal animal4 = new Animal(0, "Marcelina", "Pinscher", "Pequeno", "Curta", 6.00);
+        cadastroAnimal.cadastrarAnimal(animal4);
+
+        Animal animalConsultado = cadastroAnimal.consultarAnimal(0);
+
+        //verificando se foi o mesmo cadastrado
+        Assertions.assertNull(animalConsultado);
+
+    }
+
+
 
 
 }

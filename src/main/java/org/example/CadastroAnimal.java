@@ -37,9 +37,13 @@ public class CadastroAnimal {
         animais.removeIf(animal -> animal.getNome().equals(nome));
     }
 
-    public Animal consultarAnimal(String nome) {
+    public Animal consultarAnimal(int id) {
+        if (id <= 0) {
+            System.out.println("Erro: ID inválido.");
+            return null;
+        }
         for (Animal animal : animais) {
-            if (animal.getNome().equals(nome)) {
+            if (animal.getId() == id) {
                 return animal;
             }
         }
