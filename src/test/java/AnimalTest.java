@@ -8,6 +8,7 @@ import java.util.List;
 public class AnimalTest {
 
 
+    //validação com campos validos
     @Test
     public void cadastrarAnimal() {
         CadastroAnimal cadastroAnimal = new CadastroAnimal();
@@ -19,4 +20,19 @@ public class AnimalTest {
         Assertions.assertTrue(animalCadastrado.contains(animal1));
 
     }
+
+    //validação com campos vazios
+    @Test
+    public void cadastrarAnimalVazio() {
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+
+        Animal animal2 = new Animal(2, "", "", "", "", 0);
+        cadastroAnimal.cadastrarAnimal(animal2);
+
+        List<Animal> animalCadastrado = cadastroAnimal.listarAnimais();
+        Assertions.assertFalse(animalCadastrado.contains(animal2));
+    }
+
+
+
 }
