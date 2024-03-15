@@ -92,4 +92,16 @@ public class AnimalTest {
     }
 
 
+    //listagem de animais cadastrados
+    @Test
+    public void listarAnimal(){
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+        Animal animal6 = new Animal(6,"Maya", "Basset vira-lata", "Pequeno", "Curta",6.00);
+        cadastroAnimal.cadastrarAnimal(animal6);
+
+        List<Animal> animaisListados = cadastroAnimal.listarAnimais();
+
+        Assertions.assertTrue(animaisListados.contains(animal6));
+    }
+
 }
