@@ -33,8 +33,8 @@ public class CadastroAnimal {
         }
     }
 
-    public void excluirAnimal(String nome) {
-        animais.removeIf(animal -> animal.getNome().equals(nome));
+    public void excluirAnimal(int id) {
+        animais.removeIf(animal -> animal.getId() == id);
     }
 
     public Animal consultarAnimal(int id) {

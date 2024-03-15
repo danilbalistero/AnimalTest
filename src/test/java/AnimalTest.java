@@ -77,6 +77,19 @@ public class AnimalTest {
         Assertions.assertTrue(animalCadastrado.contains(animal6));
     }
 
+    @Test
+    //excluir animal
+    public void excluirAnimal(){
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+
+        Animal animal6 = new Animal(6,"Maya", "Basset vira-lata", "Pequeno", "Curta",6.00);
+        cadastroAnimal.cadastrarAnimal(animal6);
+
+        cadastroAnimal.excluirAnimal(6);
+
+        List<Animal> animalCadastrado = cadastroAnimal.listarAnimais();
+        Assertions.assertFalse(animalCadastrado.contains(animal6));
+    }
 
 
 }
