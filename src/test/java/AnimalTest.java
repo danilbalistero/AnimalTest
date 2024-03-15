@@ -62,6 +62,20 @@ public class AnimalTest {
 
     }
 
+    //alterar um animal
+    @Test
+    public void alterarAnimal(){
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+
+        Animal animal5 = new Animal(5, "Bidu", "Lhasa apso", "Pequeno", "Longa", 7.30);
+        cadastroAnimal.cadastrarAnimal(animal5);
+
+        Animal animal6 = new Animal(6,"Aquiles", "Pinscher", "Pequeno", "Curta", 6.00);
+        cadastroAnimal.editarAnimal("Bidu", animal6);
+
+        List<Animal> animalCadastrado = cadastroAnimal.listarAnimais();
+        Assertions.assertTrue(animalCadastrado.contains(animal6));
+    }
 
 
 
